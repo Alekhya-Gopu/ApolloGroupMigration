@@ -248,6 +248,12 @@ public class DataMigrationService : IDataMigrationService
                 {
                     userActivities = user.Activities != null ?
                         user.Activities : new List<Activities>();
+                    
+                    // Generate UUID v4 for UserKey if it's empty
+                    var userKey = string.IsNullOrEmpty(user.Key) 
+                        ? Guid.NewGuid().ToString() 
+                        : user.Key;
+                    user.Key = userKey;
                     userActivities.ForEach(activity =>
                     {
                         Product activityProduct = new Product();
@@ -259,7 +265,7 @@ public class DataMigrationService : IDataMigrationService
                             Price = activity.Price,
                             Type = ProductTypeEnum.Activity,
                             UserKey = user.UserKey,
-                            PassengerKey = user.UserKey
+                            PassengerKey = user.Key
                         };
                         bookingProducts.Add(activityProduct);
                     });
