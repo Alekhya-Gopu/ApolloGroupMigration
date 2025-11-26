@@ -66,7 +66,7 @@ public class BookingUser
     public decimal BasePrice { get; set; }
     public PaymentType PaymentType { get; set; } = PaymentType.Salary;
     public decimal ClientTotal { get; set; }
-    public object Requests { get; set; } = new();
+    public List<string> Requests { get; set; } = new();
     public Dictionary<string, string[]> RequestSections { get; set; } = new();
 
     public List<Activities> Activities { get; set; }

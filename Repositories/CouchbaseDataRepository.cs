@@ -32,7 +32,7 @@ public class CouchbaseDataRepository : IDataRepository
     {
         try
         {
-            var query = $"select `{BOOKINGS}`.* from `{BUCKET}`.`{ESHET}`.`{BOOKINGS}` offset {offset} limit {limit}";
+            var query = $"select `{BOOKINGS}`.* from `{BUCKET}`.`{ESHET}`.`{BOOKINGS}` where `groupId`=28 offset {offset} limit {limit}";
 
             var result = await _cluster.QueryAsync<Dictionary<string, object>>(query);
             return await result.ToListAsync();
@@ -159,7 +159,7 @@ public class CouchbaseDataRepository : IDataRepository
     {
         try
         {
-            var query = $"SELECT COUNT(*) as count FROM `{BUCKET}`.`{ESHET}`.`{BOOKINGS}`";
+            var query = $"SELECT COUNT(*) as count FROM `{BUCKET}`.`{ESHET}`.`{BOOKINGS}` where `groupId`=28";
             var result = await _cluster.QueryAsync<dynamic>(query);
             var countResult = await result.FirstAsync();
             return (int)countResult.count;

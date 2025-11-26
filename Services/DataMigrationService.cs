@@ -265,6 +265,18 @@ public class DataMigrationService : IDataMigrationService
                     });
                 }
 
+                // Remove Activities from users after extracting them to products
+                foreach (var user in convertedItem.Users)
+                {
+                    user.Activities = new List<Activities>();
+                }
+
+                // Remove Activities from passengers after extracting them to products
+                foreach (var passenger in convertedItem.Passengers)
+                {
+                    passenger.Activities = new List<Activities>();
+                }
+
                 convertedItem.Products = bookingProducts;
 
                 Console.WriteLine(convertedItem);

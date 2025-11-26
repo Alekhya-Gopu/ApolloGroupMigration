@@ -43,3 +43,4 @@ C:\Projects\Eshet\ApolloMigration\obj\Debug\net8.0\refint\ApolloMigration.dll
 C:\Projects\Eshet\ApolloMigration\obj\Debug\net8.0\ApolloMigration.pdb
 C:\Projects\Eshet\ApolloMigration\obj\Debug\net8.0\ApolloMigration.genruntimeconfig.cache
 C:\Projects\Eshet\ApolloMigration\obj\Debug\net8.0\ref\ApolloMigration.dll
+C:\Projects\Eshet\ApolloMigration\obj\Debug\net8.0\ApolloMigration.sourcelink.json
