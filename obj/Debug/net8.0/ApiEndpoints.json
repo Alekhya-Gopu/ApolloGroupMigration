@@ -1,0 +1,104 @@
+[
+  {
+    "ContainingType": "ApolloMigration.Controllers.DataMigrationController",
+    "Method": "ConvertData",
+    "RelativePath": "api/DataMigration/convert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ApolloMigration.Models.ConversionResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApolloMigration.Controllers.DataMigrationController",
+    "Method": "ConvertSingleDocument",
+    "RelativePath": "api/DataMigration/convert/{documentId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "documentId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "targetDocumentType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApolloMigration.Models.ConversionResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApolloMigration.Controllers.DataMigrationController",
+    "Method": "GetConversionRules",
+    "RelativePath": "api/DataMigration/rules",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApolloMigration.Controllers.DataMigrationController",
+    "Method": "ValidateConversionRule",
+    "RelativePath": "api/DataMigration/validate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sourceType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "targetType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
